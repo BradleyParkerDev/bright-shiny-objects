@@ -50,6 +50,22 @@ function fixCar(car){
     return car;
 }
 
+function getDataType(car, dataType){
+    if(dataType === 'make'){
+        return 'string';
+    }
+    else if(dataType === 'model'){
+        return 'string';
+    }
+    else if(dataType === 'year'){
+        return 'number';
+    }
+    else if(dataType === 'needsMaitenance'){
+        return 'boolean';
+    }
+
+} 
+
 // student object and its functions
 function createStudent(name, email, grades){
 
@@ -66,32 +82,109 @@ function addGrades(student, newGrades){
     return student;
 }
 
+// newTodo object and its functions
+function createNewTodo(title, isComplete){
+    let newTodo = {
+        title: title, 
+        isComplete: isComplete
+    };
+    return newTodo;
+}
+
+function addTodo(todos, newTodo){
+    todos.push(newTodo);
+    return todos;
+}
+
+//playlist and a song object
+const playlist = {
+    title: 'My jams',
+    duration: 7,
+    songs: [
+        {
+            title: 'Texas Sun',
+            artist: 'Khruangbin',
+            duration: 4
+        },
+        {
+            title: 'Malamente',
+            artist: 'Rosalia',
+            duration: 3
+        }
+    ]
+};
+function newSong(title, artist, duration){
+    const song = {
+    title: title,
+    artist: artist,
+    duration: duration
+    }; 
+    return song;
+};
+function addSong(playlist, song){
+    playlist.duration = playlist.duration + song.duration;
+    playlist.songs.push(song);
+    return playlist;
+}
+
+
+
+
+
 
 //Creates an object called 'mesuara'
 const mesuara = createUser('Mesuara', 'Kaleziq');
 console.log(mesuara);
 
-
+// Creates an object called 'tim'
 const tim = createUser('Tim', 'Horton');
 setAge(tim, 50);
 console.log(tim);
 
-
+// Creates an object called 'angela'
 const angela = createUser('Angela', 'Merkel');
 setAge(angela, 66);
 incrementAge(angela);
 console.log(angela);
 
+// Creates an object called mustang
 const mustang = createCar('Ford', 'Mustang', 1969, true);
 fixCar(mustang);
 console.log(mustang);
+console.log(getDataType(mustang,'make'));
+console.log(getDataType(mustang,'model'));
+console.log(getDataType(mustang,'year'));
+console.log(getDataType(mustang,'needsMaitenance'));
 
 const anthony = createStudent('Anthony', 'anthony.derosa@codeimmersives.com',[80, 100, 95]);
 const newGrades = [88, 70, 90];
 addGrades(anthony, newGrades);
 console.log(anthony)
 
+//Implementation of todo object
+//const todos = [];
+const todos = [
+    { 
+        title: 'Get gas', 
+        isComplete: false },
+    { 
+        title: 'Buy bread', 
+        isComplete: true  
+    }
+];
+const gas = createNewTodo('Get gas', false);
+const bread = createNewTodo('Buy bread',true);
+const mom = createNewTodo('Call mom', false);
+//addTodo(todos,gas);
+//addTodo(todos,bread);
+addTodo(todos,mom);
+//console.log(todos);
 
+//
+const oldFriends = newSong("Old Friends", "Pinegrove", 3 );
+console.log(oldFriends)
+addSong(playlist, oldFriends);
+console.log(playlist)
 
 // ┌─────────────────────────────────────────────────────────────────────────┐
 // │ Code used for testing. Do not modify!                                   │                         
