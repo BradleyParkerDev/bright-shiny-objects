@@ -180,7 +180,7 @@ const mom = createNewTodo('Call mom', false);
 addTodo(todos,mom);
 //console.log(todos);
 
-//
+//Creates old friends object and implements addSong() function
 const oldFriends = newSong("Old Friends", "Pinegrove", 3 );
 console.log(oldFriends)
 addSong(playlist, oldFriends);
