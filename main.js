@@ -127,10 +127,7 @@ function addSong(playlist, song){
     return playlist;
 }
 
-
-
-
-
+////////////////////////////////////////////////////////////////////////////////
 
 //Creates an object called 'mesuara'
 const mesuara = createUser('Mesuara', 'Kaleziq');
@@ -162,7 +159,6 @@ addGrades(anthony, newGrades);
 console.log(anthony)
 
 //Implementation of todo object
-//const todos = [];
 const todos = [
     { 
         title: 'Get gas', 
@@ -175,16 +171,18 @@ const todos = [
 const gas = createNewTodo('Get gas', false);
 const bread = createNewTodo('Buy bread',true);
 const mom = createNewTodo('Call mom', false);
-//addTodo(todos,gas);
-//addTodo(todos,bread);
 addTodo(todos,mom);
-//console.log(todos);
 
 //Creates old friends object and implements addSong() function
 const oldFriends = newSong("Old Friends", "Pinegrove", 3 );
 console.log(oldFriends)
 addSong(playlist, oldFriends);
 console.log(playlist)
+
+
+
+
+
 
 // ┌─────────────────────────────────────────────────────────────────────────┐
 // │ Code used for testing. Do not modify!                                   │                         
