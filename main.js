@@ -77,6 +77,7 @@ function createStudent(name, email, grades){
     return student; 
 
 }
+
 function addGrades(student, newGrades){
     student.grades = student.grades.concat(newGrades);
     return student;
@@ -113,6 +114,7 @@ const playlist = {
         }
     ]
 };
+
 function newSong(title, artist, duration){
     const song = {
     title: title,
@@ -121,11 +123,43 @@ function newSong(title, artist, duration){
     }; 
     return song;
 };
+
 function addSong(playlist, song){
     playlist.duration = playlist.duration + song.duration;
     playlist.songs.push(song);
     return playlist;
 }
+//reportCard functions and objects
+
+function createReportCard(lowestGrade, highestGrade, averageGrade, grades){
+    const reportCard = {
+        lowestGrade: lowestGrade,
+        highestGrade: highestGrade,
+        averageGrade: averageGrade,
+        grades: grades
+    }; 
+    return reportCard;
+}
+
+function updateReportCard(reportCard, grade){
+
+    reportCard.grades.push(grade);
+    reportCard.lowestGrade = Math.min(...reportCard.grades);
+    reportCard.highestGrade = Math.max(...reportCard.grades);
+    reportCard.averageGrade = avgGrade(reportCard.grades)
+    return reportCard;
+
+    function avgGrade(arr){
+        let sum = 0;
+        for(let i = 0; i < arr.length; i++){
+           sum = sum + arr[i]; 
+        }
+    
+        return (sum / arr.length);
+    }
+}
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -179,8 +213,14 @@ console.log(oldFriends)
 addSong(playlist, oldFriends);
 console.log(playlist)
 
+//Creates reportCard and adds new grade
 
-
+const myReportCard = createReportCard(70, 96, 82, [70, 95, 80]);
+updateReportCard(myReportCard, 62);
+console.log(myReportCard);
+const myReportCard2 = createReportCard(70, 96, 82, [70, 95, 80]);
+updateReportCard(myReportCard2, 100);
+console.log(myReportCard2);
 
 
 
