@@ -129,7 +129,7 @@ function addSong(playlist, song){
     playlist.songs.push(song);
     return playlist;
 }
-//reportCard functions and objects
+//reportCard object and functions  
 
 function createReportCard(lowestGrade, highestGrade, averageGrade, grades){
     const reportCard = {
