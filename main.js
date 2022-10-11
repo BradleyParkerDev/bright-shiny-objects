@@ -205,7 +205,7 @@ const todos = [
 const gas = createNewTodo('Get gas', false);
 const bread = createNewTodo('Buy bread',true);
 const mom = createNewTodo('Call mom', false);
-addTodo(todos,mom);
+console.log(addTodo(todos,mom));
 
 //Creates old friends object and implements addSong() function
 const oldFriends = newSong("Old Friends", "Pinegrove", 3 );
